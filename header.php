@@ -60,31 +60,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<li class="active"><a href="index.php">Home <i class="sr-only">(current)</i></a></li>
 								<li><a href="about.php">About</a></li>
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<i class="caret"></i></a>
-										<ul class="dropdown-menu">
-											<li><a href="blog.php">Blog</a></li>
-											<li><a href="pricing.php">Pricing</a></li>
-											<li><a href="faq.php">FAQ's</a></li>
-											<li><a href="testimonials.php">Testimonials</a></li>
-											<li><a href="history.php">History</a></li>
-											<li><a href="support.php">Support</a></li>
-											<li><a href="templatesetting.php">Template setting</a></li>
-											<li><a href="login.php">Login</a></li>
-											<li><a href="portfolio.php">Portfolio</a></li>
-										</ul>
-									</li>
+									<!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages<i class="caret"></i></a> -->
+										<!-- <ul class="dropdown-menu"> -->
+											<!-- <li><a href="blog.php">Blog</a></li> -->
+											<!-- <li><a href="pricing.php">Pricing</a></li> -->
+											<!-- <li><a href="faq.php">FAQ's</a></li> -->
+											<!-- <li><a href="testimonials.php">Testimonials</a></li> -->
+											<!-- <li><a href="history.php">History</a></li> -->
+											<!-- <li><a href="support.php">Support</a></li> -->
+											<!-- <li><a href="templatesetting.php">Template setting</a></li> -->
+											<!-- <li><a href="login.php">Login</a></li> -->
+											<!-- <li><a href="portfolio.php">Portfolio</a></li> -->
+										<!-- </ul> -->
+									<!-- </li> -->
 								<li><a href="services.php">Services</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hosting<i class="caret"></i></a>
 									<ul class="dropdown-menu">
-										<li><a href="linuxhosting.php">Linux hosting</a></li>
+									<?php	
+										require "connect.php";
+										$sql = "select * from  tbl_product where prod_parent_id=1";
+										$result = $conn->query($sql);
+										if ($result->num_rows > 0){
+											while($row = $result->fetch_assoc()) {
+										?>
+										<li><a href="linuxhosting.php"><?php echo $row['prod_name']; ?></a></li>
+						
+										<?php
+										}
+									}else {
+										echo "error occured";
+									  }
+									  $conn->close();
+									?>
+										<!-- <li><a href="linuxhosting.php">Linux hosting</a></li>
 										<li><a href="wordpresshosting.php">WordPress Hosting</a></li>
 										<li><a href="windowshosting.php">Windows Hosting</a></li>
-										<li><a href="cmshosting.php">CMS Hosting</a></li>
+										<li><a href="cmshosting.php">CMS Hosting</a></li> -->
+											
 									</ul>			
 								</li>
-								<li><a href="codes.php">Codes</a></li>
+								<!-- <li><a href="codes.php">Codes</a></li> -->
+								<li><a href="pricing.php">Pricing</a></li>
 								<li><a href="contact.php">Contact</a></li>
+								<li><a href="blog.php">Blog</a></li>
+								<li><a href="account.php">SignUp</a></li>
+								<li><a href="login.php">Login</a></li>
 							</ul>
 									  
 						</div><!-- /.navbar-collapse -->

@@ -1563,21 +1563,12 @@ a.button4:hover {
 	display: block;
 	text-transform: uppercase;
 }
-.register-top-grid input, .register-bottom-grid input{
+.register-top-grid input[type="text"], .register-bottom-grid input[type="password"] {
 	border: 1px solid #555;
 	outline-color:#FD9F3E;
 	width: 96%;
 	font-size: 1em;
-    padding: 0.5em;
-    background-color: white;
-}
-#security-question {
-    border: 1px solid #555;
-	outline-color:#FD9F3E;
-	width: 96%;
-	font-size: 1em;
-    padding: 6px;
-    background-color: white;
+	padding: 0.5em;
 }
 .checkbox {
 	margin-bottom: 4px;
@@ -1650,7 +1641,7 @@ a.button4:hover {
 .register-but{
 	margin-top:1em;
 }
-.register-but input[type="submit"] {
+.register-but form input[type="submit"] {
 	background: #e7663f;
 	color: #FFF;
 	font-size: 1.2em;
